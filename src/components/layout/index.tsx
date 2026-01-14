@@ -19,7 +19,7 @@ export default function Layout({
       <div className={clsx('pb-14', center ? 'text-center' : '')}>
         <h1
           className={clsx(
-            'text-3xl font-medium lg:text-[10rem]',
+            'text-3xl font-medium lg:text-[10rem] lg:leading-[1.1]',
             center ? 'items-center' : ''
           )}
         >

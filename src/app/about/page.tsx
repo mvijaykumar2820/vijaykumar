@@ -1,31 +1,14 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useSpotify } from '@/hooks/useSpotify';
-import { useGitHub } from '@/hooks/useGithub';
 import Layout from '@/components/layout';
 import AnimatedSection from '@/components/about/AnimatedSection';
 import TextReveal from '@/components/about/TextReveal';
 import JourneyTimeline from '@/components/about/JourneyTimeline';
 import SkillsCloud from '@/components/about/SkillsCloud';
-import GitHubContributionsGraph from '@/app/about/githubActivity';
-import SpotifyPlaylists from '@/app/about/spotifyPlaylists';
 import ContrastCursor from '@/components/animations/cursor/contrastCursor';
 
 export default function About() {
-  const {
-    playlists,
-    isLoading: spotifyLoading,
-    error: spotifyError
-  } = useSpotify();
-
-  const {
-    githubData,
-    isLoading: githubLoading,
-    error: githubError
-  } = useGitHub();
 
   return (
     <div className="relative overflow-hidden">

@@ -1,14 +1,44 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      // Loop 2 seconds before the end
+      if (video.duration && video.currentTime > video.duration - 2) {
+        video.currentTime = 0;
+        video.play();
+      }
+    };
+
+    video.playbackRate = 2;
+
+    video.addEventListener('timeupdate', handleTimeUpdate);
+    return () => video.removeEventListener('timeupdate', handleTimeUpdate);
+  }, []);
+
   return (
     <div className="relative flex min-h-screen w-full items-center bg-foreground align-middle">
-      <iframe
-        src="https://player.vimeo.com/video/362997602?autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1&controls=0"
-        className="pointer-events-none aspect-video h-full w-full"
-        allow="autoplay; fullscreen"
-        allowFullScreen
-      ></iframe>
+      {/* 
+        To change the video: 
+        1. Place your video file in the 'public/videos' folder.
+        2. Name it 'hero.mp4' (or update the src below).
+      */}
+      <video
+        ref={videoRef}
+        autoPlay
+        loop={false}
+        muted
+        playsInline
+        className="pointer-events-none h-full w-full object-cover"
+      >
+        <source src='/videos/hero.mp4' type='video/mp4' />
+        Your browser does not support the video tag.
+      </video>
     </div>
   );
 }

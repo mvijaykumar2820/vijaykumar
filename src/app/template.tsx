@@ -35,7 +35,7 @@ export default function RootTemplate({ children }: PropsWithChildren) {
       setIsLoading(false);
       document.body.style.cursor = 'default';
       window.scrollTo(0, 0);
-    }, 800);
+    }, 100);
     console.log('loading', isLoading);
   }, []);
 
