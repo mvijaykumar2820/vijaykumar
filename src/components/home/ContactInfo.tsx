@@ -39,7 +39,7 @@ export default function ContactInfo() {
       <div className="w-full bg-foreground pt-[150px] sm:max-w-[1800px]">
         <div className="relative border-b border-gray-600 pb-12 sm:mx-[100px]">
           <span className="flex items-center">
-            {/* Profile image removed as requested */}
+            {/*  */}
             <h2 className="ml-3 text-xl font-medium sm:text-[5vh]">
               Let&apos;s work together!
             </h2>
@@ -86,7 +86,7 @@ export default function ContactInfo() {
               <h3 className="m-0 cursor-default text-base font-light text-gray-500">
                 Socials
               </h3>
-              {/* Twitter removed as requested */}
+              {/* */}
             </span>
             <Magnetic>
               <Link
